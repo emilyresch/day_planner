@@ -24,19 +24,27 @@
 //their event is saved in local storage so that when page is refreshed, the events stay - localStorage;
 
 ///////// putting today's date on the jumbotron ///////////
-var now = moment().toString();
-//   var nowNew = now.format('YYYY-M-D');
-console.log(now);
+var today = moment().toString();
+
+var dateFormat = "MMMM DD, YYYY";
+var timeFormat = "HH:mm";
+
+var todayDate = moment().format(dateFormat);
+var currentTime = moment().format(timeFormat);
+
+console.log(todayDate);
+console.log(currentTime);
+
 //   console.log(nowNew);
-$("#currentDay").text(now);
+$("#currentDay").text(todayDate);
 
 //hours of the day on the calendar app
-var hours = ["9am", "10am"];
+// var hours = ["9am", "10am"];
 
 
 
 ///////// change color of timeblock depending on the time of day //////////
-// if (time is now) {
+// if () {
 //   make current timeblock red = .present
 // }
 // else if (time is earlier than now){
@@ -46,11 +54,6 @@ var hours = ["9am", "10am"];
 // }
 
 
-
-
-
-
-
 ///////// function to save user event text ///////////
 
 $(".saveBtn").on("click", function (){
@@ -58,13 +61,10 @@ $(".saveBtn").on("click", function (){
 
   // e.preventDefault();
   // var userEvent = $(this).val();
-  var userEvent = userInput.val().trim();
+  var userEvent = userInput.value.trim(); //this doesnt work for some reason
   console.log(userEvent);
-  
 
-
-  // console.log(userEvent);
-
-  // window.localStorage.setItem("event", userEvent);
+  window.localStorage.setItem("event", userEvent);
+  //now need to connect to where it was typed on the page and do getItem("event");
 
 });
