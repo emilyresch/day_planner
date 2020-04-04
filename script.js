@@ -25,6 +25,10 @@
 
 ///////// putting today's date on the jumbotron ///////////
 var today = moment().toString();
+var thisHour = moment().hours();
+console.log(thisHour);
+var pastHour = thisHour - 1
+console.log(pastHour);
 
 var dateFormat = "MMMM DD, YYYY";
 var timeFormat = "HH:mm";
@@ -44,27 +48,53 @@ $("#currentDay").text(todayDate);
 
 
 ///////// change color of timeblock depending on the time of day //////////
-// if () {
+// if (hour is current hour) {
 //   make current timeblock red = .present
+var color = $(".description");
+var calHour = $(".hour");
+console.log(calHour);
+
+  if (calHour == thisHour) {
+    color.toggleClass("present");
+  } else if (pastHour) {
+    color.toggleClass("past");
+  } else {
+    color.toggleClass("future");
+  }
+
+
+
 // }
-// else if (time is earlier than now){
+// else if (hour is earlier than current){
 //   make past timeblocks grey = .past
-// } else {
+
+// } else { //hour is later than current
 //     make timeblocks green = .future
 // }
 
 
+
+// var timeblock = $("textarea");
+// timeblock.attr("style", "bacground-color: red;");
+
+
+
 ///////// function to save user event text ///////////
 
-$(".saveBtn").on("click", function (){
-  var userInput = document.getElementById("time-block-input");
-
+$(".saveBtn").on("click", function () {
+  // var userInput = document.getElementById("event-input");
+  // console.log(this);
   // e.preventDefault();
   // var userEvent = $(this).val();
-  var userEvent = userInput.value.trim(); //this doesnt work for some reason
+  var userEvent = $(".event-input").val().trim(); 
   console.log(userEvent);
 
   window.localStorage.setItem("event", userEvent);
   //now need to connect to where it was typed on the page and do getItem("event");
 
+
 });
+
+//retrieve saved values in local storage
+var saveEvent = localStorage.getItem("event");
+$(".event-input").text(saveEvent);
