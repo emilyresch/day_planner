@@ -67,6 +67,7 @@
 
       //second column: textarea
       var typeHere = $("<textarea>").attr("class", "time-block description col-9");
+      typeHere.attr("data-hour", [i]);
       //third column: button
       var button = $("<button>").attr("class", "saveBtn btn col");
       var icon = $("<i>").attr("class", "fa fa-save");
@@ -95,22 +96,39 @@
     }
 
     //LOCAL STORAGE//////
-    //reference button class saveBtn and give it an onclick event
-    $(".saveBtn").on("click", function (event) {
-      //need to grab value of textarea
-      console.log(event.target.parentElement.children[1]); //found event target
-      
-      // if (event.target.matches("button")){
-      var userInput = $(this).siblings("textarea").val();
-      // console.log(userInput);
+    //make object to store user's events per hour
+    var events = {
+      "hour-9": "",
+      "hour-10": "",
+      "hour-11": "",
+      "hour-12": "",
+      "hour-13": "",
+      "hour-14": "",
+      "hour-15": "",
+      "hour-16": "",
+      "hour-17": ""
+    }
 
-      window.localStorage.setItem("event", userInput);
-      // }
+    //set item in local storage. Turn it into a string
+    localStorage.setItem("data", JSON.stringify(events));
+    console.log(JSON.stringify(events, null, 2));
+
+    //grab data and return to object
+    var grabEvent = localStorage.getItem("data");
+    grabEvent = JSON.parse(grabEvent);
+    // $("textarea").text(grabEvent);
+
+    //onclick event for saveBtn
+    $(".saveBtn").on("click", function (event) {
+      //
+      var wantHour = $(this).attr("data-hour");
+      console.log(wantHour);
+      grabEvent["hour-" + wantHour] = $(this).siblings("textarea");
+     
     })
     
     
-    var grabEvent = localStorage.getItem("event");
-    $("textarea").text(grabEvent);
+    
     
 
    

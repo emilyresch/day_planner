@@ -8,3 +8,5 @@ Unfortunately, I hit a gigantic roadblock that make it very difficult to impleme
 After reaching out to a couple of classmates, I decided the best route was to fully start over and use JS/JQuery to build my webpage. In doing this I was able to incorporate for loops to make the timeblocks and determine their colors simultaneously. You can imagine my sigh of relief. 
 
 Now it was on to the localStorage. In my previous attempts I was able to console log the things that the user typed into the textarea, but getting the events to stay properly upon refreshing the page was very difficult as I'm still trying to fully absorb the concept of $(this) and event targeting. 
+
+Still having some issues after Sunday review session. I added some stuff that we talked about. I think I understand the concept but can't seem to quite execute it.
