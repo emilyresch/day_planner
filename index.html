@@ -95,32 +95,25 @@
     }
 
     //LOCAL STORAGE//////
-    //reference button class saveBtn
-    $(".saveBtn").on("click", function () {
+    //reference button class saveBtn and give it an onclick event
+    $(".saveBtn").on("click", function (event) {
       //need to grab value of textarea
-      var userInput = $(this).siblings(typeHere);
-      console.log(userInput.val());
+      console.log(event.target.parentElement.children[1]); //found event target
+      
+      // if (event.target.matches("button")){
+      var userInput = $(this).siblings("textarea").val();
+      // console.log(userInput);
 
-
-
-
-// $(".saveBtn").on("click", function () {
-//   // console.log(this);
-//   var userInput = $(this).siblings("textarea").val();
-//   console.log(userInput);
-
-//   window.localStorage.setItem("event", userInput);
-//   //now need to connect to where it was typed on the page and do getItem("event");
-
-
-// });
-
-// //retrieve saved values in local storage
-
-// var grabEvent = localStorage.getItem("event");
-// $(".event-input").text(Event);
-
+      window.localStorage.setItem("event", userInput);
+      // }
     })
+    
+    
+    var grabEvent = localStorage.getItem("event");
+    $("textarea").text(grabEvent);
+    
+
+   
   </script>
 
 </body>
