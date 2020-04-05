@@ -1,122 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      
-      <!-- Timeblocks go here -->
-      <!-- <div class="row">
-      <textarea class="hour">9am</textarea> -->
-     
-      <!-- <input type="text" class="time-block description" id="time-block-input" placeholder="Add your event..."></input> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
 
-      <!-- <div class="row">
-        <textarea class="hour">9am</textarea>
-         <label for="password">Password</label> 
-        <input type="text" name="event" id="time-block-input" placeholder="Add your event..." />
-        <button class="saveBtn fas fa-lock"></button>
-      </div> -->
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
 
-      <div id="hour-9" class="row">
-        <div class="hour">
-          9am
-        </div>
-        <textarea id="event-input" class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-10" class="row">
-        <div class="hour">
-          10am
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-10" class="row">
-        <div class="hour">
-          11am
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-10" class="row">
-        <div class="hour">
-          12pm
-        </div>
-        <textarea class="description time-block event-input" data-eventInput ></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-13" class="row">
-        <div class="hour">
-          1pm
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-14" class="row">
-        <div class="hour">
-          2pm
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-15" class="row">
-        <div class="hour">
-          3pm
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-16" class="row">
-        <div class="hour">
-          4pm
-        </div>
-        <textarea class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
-      <div id="hour-17" class="row">
-        <div class="hour">
-          5pm
-        </div>
-        <textarea id="event-input" class="description time-block event-input"></textarea>
-        <button class="btn saveBtn"><i class="fas fa-save"></i></button>
-      </div>
+    <!-- Timeblocks go here -->
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript">
+    ///PSEUDOCODE////
+    //when app is opened, today's date is displayed  (using moment) and appends under the header in #currentDay
+    //build calendar using table or bootstrap etc 
+    //calendar by hour is displayed, 9am to 5pm (standard business hours)
+    //past hours displayed in grey, current hour is red, future hours are green --this can be an if else statement using the current time
+    /////eg, if time is less than current time, grey. else if time is current to now, green. else time is green (something along those lines)
+    //user can click on the hour they want and type in an event --timeblocks willbe inputs
+    //user clicks on a save button to save their event - save button will need an onclick event listener which...
+    //their event is saved in local storage so that when page is refreshed, the events stay - localStorage;
+    //ADD DATE TO JUMBOTRON////
+
+    //find today's date
+    var today = moment().toString();
+    var dateFormat = "MMMM DD, YYYY";
+    var todayDate = moment().format(dateFormat);
+    console.log(todayDate);
+    //get it on the jumbotron
+    $("#currentDay").text(todayDate);
+
+    ///BUILD WEBPAGE///
+    var mainDiv = $(".container");
+
+    //gigantic for-loop to make timeblocks
+    for (var i = 9; i <= 17; i++) {
+      //make a new row
+      var newRow = $("<div>").attr("class", "row");
+      //make 3 columns in the row, first: show hour block
+      var hourColumn = $("<div>").attr("class", "hour col");
+      //show hour 
+
+      // and - need to determine if it's am or pm
+      if ([i] < 12) {
+        hourColumn.text([i] + "AM");
+      } else {
+        hourColumn.text([i] + "PM");
+      }
+
+      //second column: textarea
+      var typeHere = $("<textarea>").attr("class", "time-block description col-9");
+      //third column: button
+      var button = $("<button>").attr("class", "saveBtn btn col");
+      var icon = $("<i>").attr("class", "fa fa-save");
+
+      mainDiv.append(newRow);
+      newRow.append(hourColumn);
+      newRow.append(typeHere);
+      newRow.append(button);
+      button.append(icon);
+
+      //DETERMINE TIME OF DAY//////
+      var timeFormat = "HH:mm";
+      var currentTime = moment().format(timeFormat);
+      console.log(currentTime);
+      //DETERMINE COLOR OF DIV//////
+      var thisHour = moment().hours();
+      //if the current hour is the same as the hour in hourColumn,
+      if (thisHour == [i]) {
+        $(".description").attr("class", "col-9 present");
+      } else if ([i] < thisHour) { //if it's before the current hour
+        $(".description").attr("class", "col-9 past");
+      } else { //if its after the current hour
+        $(".description").attr("class", "col-9 future");
+      }
+
+    }
+
+    //LOCAL STORAGE//////
+    //reference button class saveBtn
+    $(".saveBtn").on("click", function () {
+      //need to grab value of textarea
+      var userInput = $(this).siblings(typeHere);
+      console.log(userInput.val());
 
 
 
-      
-    </div>
 
-    </div>
+// $(".saveBtn").on("click", function () {
+//   // console.log(this);
+//   var userInput = $(this).siblings("textarea").val();
+//   console.log(userInput);
 
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+//   window.localStorage.setItem("event", userInput);
+//   //now need to connect to where it was typed on the page and do getItem("event");
+
+
+// });
+
+// //retrieve saved values in local storage
+
+// var grabEvent = localStorage.getItem("event");
+// $(".event-input").text(Event);
+
+    })
+  </script>
+
+</body>
+
 </html>

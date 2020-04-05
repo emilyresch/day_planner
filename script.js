@@ -24,12 +24,10 @@
 //their event is saved in local storage so that when page is refreshed, the events stay - localStorage;
 
 ///////// putting today's date on the jumbotron ///////////
-var today = moment().toString();
-var thisHour = moment().hours();
-console.log(thisHour);
-var pastHour = thisHour - 1
-console.log(pastHour);
 
+
+
+var today = moment().toString();
 var dateFormat = "MMMM DD, YYYY";
 var timeFormat = "HH:mm";
 
@@ -50,17 +48,39 @@ $("#currentDay").text(todayDate);
 ///////// change color of timeblock depending on the time of day //////////
 // if (hour is current hour) {
 //   make current timeblock red = .present
-var color = $(".description");
-var calHour = $(".hour");
-console.log(calHour);
 
-  if (calHour == thisHour) {
-    color.toggleClass("present");
-  } else if (pastHour) {
-    color.toggleClass("past");
-  } else {
-    color.toggleClass("future");
-  }
+var thisHour = moment().hours();
+console.log(thisHour);
+
+for (var i=9;i<=17; i++) {
+// var columnDiv = $("<div>");
+var rowConnect = $(".row");
+var newDiv = $("<div>").attr("value", [i]);
+// console.log(newDiv);
+if (newDiv < 12) {
+newDiv.text([i] + "AM");
+} else if (newDiv > 12) {
+  newDiv.text([i] + "PM");
+}
+
+
+}
+rowConnect.append(newDiv);
+
+
+// var color = $("textarea");
+// var calHour = $(".row");
+// console.log(calHour);
+
+
+
+// if (thisHour ) {
+//   color.addClass("present"); //red
+// } else if () {
+//   color.addClass("past");  //grey
+// } else if () {
+//   color.addClass("future");  //green
+// }
 
 
 
@@ -72,29 +92,20 @@ console.log(calHour);
 //     make timeblocks green = .future
 // }
 
-
-
-// var timeblock = $("textarea");
-// timeblock.attr("style", "bacground-color: red;");
-
-
-
 ///////// function to save user event text ///////////
 
 $(".saveBtn").on("click", function () {
-  // var userInput = document.getElementById("event-input");
   // console.log(this);
-  // e.preventDefault();
-  // var userEvent = $(this).val();
-  var userEvent = $(".event-input").val().trim(); 
-  console.log(userEvent);
+  var userInput = $(this).siblings("textarea").val();
+  console.log(userInput);
 
-  window.localStorage.setItem("event", userEvent);
+  window.localStorage.setItem("event", userInput);
   //now need to connect to where it was typed on the page and do getItem("event");
 
 
 });
 
 //retrieve saved values in local storage
-var saveEvent = localStorage.getItem("event");
-$(".event-input").text(saveEvent);
+
+var grabEvent = localStorage.getItem("event");
+$(".event-input").text(Event);
