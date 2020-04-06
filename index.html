@@ -77,6 +77,8 @@
       newRow.append(typeHere);
       newRow.append(button);
       button.append(icon);
+  ///POPULATE TABLE WITH EXISTING LOCALSTORAGE/////
+
 
       //DETERMINE TIME OF DAY//////
       var timeFormat = "HH:mm";
@@ -116,14 +118,26 @@
     //grab data and return to object
     var grabEvent = localStorage.getItem("data");
     grabEvent = JSON.parse(grabEvent);
+    grabEvent["hour-" + wantHour] = $(this).siblings("textarea");
+
     // $("textarea").text(grabEvent);
 
     //onclick event for saveBtn
-    $(".saveBtn").on("click", function (event) {
+    $(".saveBtn").on("click", function () {
       //
-      var wantHour = $(this).attr("data-hour");
+      var wantHour = $(this).siblings("textarea").attr("data-hour");
       console.log(wantHour);
-      grabEvent["hour-" + wantHour] = $(this).siblings("textarea");
+      // console.log(wantHour);
+      // grabEvent["hour-" + wantHour] = $(this).siblings("textarea");
+      console.log($(this).siblings("textarea")[0].value);
+      //save textarea content as a variable
+      var textHour = $(this).siblings("textarea")[0].value;
+      //update events object 
+      grabEvent["hour-" + wantHour] = textHour;
+
+      // events["hour-9"] = textHour;
+
+      
      
     })
     
