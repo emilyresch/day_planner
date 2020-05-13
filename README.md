@@ -5,13 +5,13 @@
 _________________________
 
 ![Repo Size badge](https://img.shields.io/github/repo-size/emilyresch/resch_homework_5)
-![File Size badge](https://img.shields.io/github/size/emilyresch/resch_homework_5)
 ![GitHub License](https://img.shields.io/github/license/emilyresch/resch_homework_5)
 
 _________________________
 
 ## Description:
-This app is a work day planner which allows users to keep track of their busy schedules by saving their appointments and events. Users can type an event into any timeblock and hit save.  
+This app is a work day planner which allows users to keep track of their busy schedules by saving their appointments and events. Users can type an event into any timeblock and hit save. Type into any textarea, and hit save to save your event. You can easily update your event by deleting text and writing something new, and then hitting the respective save button 
+once again. 
 
 _________________________
 
