@@ -58,7 +58,7 @@
 
  //load items from localstorage onto the page
  function addStoredItems() {
-    for(i = 9 ; i < 17; i++){
+    for(i = 9 ; i < 18; i++){
         //grab value with keyname from localstorage
         var event = JSON.parse(localStorage.getItem(`textarea${[i]}`));
         //set the textarea's text to that value
