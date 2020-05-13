@@ -1,12 +1,63 @@
-# resch_homework_5
 
-I apologize for not having README's in the last couple of assignments. I was down to the wire on getting those in on time so I didn't have the chance to write much. 
-This assingment was interesting. I was a little intimidated by the concept but started to feel a bit more confident after some time because I really broke down my approach (into what I thought were bite sized pieces). I had a good amount of psuedo code and a plan of the types of if/elses, for-loops, etc. 
+# __Day Planner App__ by emilyresch
 
-Unfortunately, I hit a gigantic roadblock that make it very difficult to implement moment (and change the colors of the timeblocks). I spent a good amount of time (probably too much time) researching how to go about my issue on different websites. My issue was that I had build the timeblocks in my actual html, thinking this would be simpler. Turned out, it was going to be very difficult to use for loops to determine the values of the hour columns (hourColumn) and use that to compare to the current hour (thisHour).
 
-After reaching out to a couple of classmates, I decided the best route was to fully start over and use JS/JQuery to build my webpage. In doing this I was able to incorporate for loops to make the timeblocks and determine their colors simultaneously. You can imagine my sigh of relief. 
+_________________________
 
-Now it was on to the localStorage. In my previous attempts I was able to console log the things that the user typed into the textarea, but getting the events to stay properly upon refreshing the page was very difficult as I'm still trying to fully absorb the concept of $(this) and event targeting. 
+![Repo Size badge](https://img.shields.io/github/repo-size/emilyresch/resch_homework_5)
+![File Size badge](https://img.shields.io/github/size/emilyresch/resch_homework_5)
+![GitHub License](https://img.shields.io/github/license/emilyresch/resch_homework_5)
 
-Still having some issues after Sunday review session. I added some stuff that we talked about. I think I understand the concept but can't seem to quite execute it.
+_________________________
+
+## Description:
+This app is a work day planner which allows users to keep track of their busy schedules by saving their appointments and events. Users can type an event into any timeblock and hit save.  
+
+_________________________
+
+### Table of Contents
+- [Installing](#installing)
+- [Contributors](#contributors)
+- [Tests](#tests)
+- [Questions](#questions)
+- [License](#license)
+- [Heroku](#heroku)
+
+_________________________
+
+### Installing
+You will just need the link below! 
+
+## Contributors
+ - 
+
+### Tests
+None
+
+### Questions
+This app has been updated since it was first attempted in April. I had a difficult time with localstorage but starting to get the hang of it.
+
+## License
+Day Planner App (C) 2020, Emily Resch.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+## Heroku
+Hosted with github, not heroku.
+<https://emilyresch.github.io/resch_homework_5/>
+
+
+_____________________
+
+![Github profile pic](https://avatars2.githubusercontent.com/emilyresch)
