@@ -5,7 +5,6 @@
 _________________________
 
 ![Repo Size badge](https://img.shields.io/github/repo-size/emilyresch/resch_homework_5)
-![GitHub License](https://img.shields.io/github/license/emilyresch/resch_homework_5)
 
 _________________________
 
